@@ -1,0 +1,29 @@
+{
+    "BasePath": ".",
+    "MaxErrorsInFile": 3,
+    "MaxFailedFiles": 1,
+    "Servers": [
+        {
+            "Id": "server1",
+            "Description": "SQL Server 1",
+            "ServerName": "192.168.0.10",
+            "Database": "northwind",
+            "Username": "***",
+            "Password": "***",
+            "Vars": {
+                "db_name1": "alpha"
+            }
+        },
+        {
+            "Id": "server2",
+            "Description": "SQL Server 2",
+            "ServerName": "192.168.0.11",
+            "Database": "northwind",
+            "Username": "***",
+            "Password": "***",
+            "Vars": {
+                "db_name1": "beta"
+            }
+        }
+    ]
+}
