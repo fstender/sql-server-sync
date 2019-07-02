@@ -123,7 +123,7 @@ def CheckOneFile(filename, vars, cursor):
 
 def UpdateDatabase(cursor, sql):
     tmp = "\r\n".join(sql)
-    tmp = tmp.replace("create ", "alter ", 1)
+    tmp = re.sub("create", "alter", tmp, flags=re.IGNORECASE)
     cursor.execute(tmp)
     cursor.commit()
     print(f"{fg('yellow')} UPDATED{attr('reset')}")
@@ -132,7 +132,7 @@ def UpdateDatabase(cursor, sql):
 
 def InsertDatabase(cursor, sql):
     tmp = "\r\n".join(sql)
-    tmp = tmp.replace("alter ", "create ", 1)
+    tmp = re.sub("alter", "create", tmp, flags=re.IGNORECASE)
     cursor.execute(tmp)
     cursor.commit()
     print(f"{fg('yellow')} CREATED{attr('reset')}")
