@@ -164,7 +164,10 @@ else:
     includes = None
 
 for server in config["Servers"]:
-    if includes and not server["Id"]  in includes:
+    if "Disabled" in server and server["Disabled"]:
+        continue
+
+    if includes and not server["Id"] in includes:
         continue
 
     print(f"\n{attr('bold')}Checking {server['Description']}{attr('reset')}")
